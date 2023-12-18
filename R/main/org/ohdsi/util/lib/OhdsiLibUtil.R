@@ -4,6 +4,8 @@
 #
 # ---
 
+library(R6)
+
 OhdsiLibUtil = R6Class(
 
     classname = "OhdsiLibUtil",
