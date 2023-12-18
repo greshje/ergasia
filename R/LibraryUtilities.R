@@ -4,6 +4,8 @@
 #
 # ---
 
+source("./R/OhdsiLibUtil.R")
+
 getNewOhdsiLibUtil <- function() {
   rtn <- OhdsiLibUtil$new()
   return(rtn)
