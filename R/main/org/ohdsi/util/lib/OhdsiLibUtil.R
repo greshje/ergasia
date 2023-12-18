@@ -9,7 +9,9 @@ OhdsiLibUtil = R6Class(
     classname = "OhdsiLibUtil",
 
     public = list (
-        
+        test = function() {
+          print("Test worked.")
+        }
     )
 
 )
