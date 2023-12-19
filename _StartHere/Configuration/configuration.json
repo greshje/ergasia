@@ -1,4 +1,5 @@
 {
+    "libPath": "C:/_YES/_STRATEGUS/_MODULES/CohortIncidenceModule_0.2.0/renv/library/R-4.2/x86_64-w64-mingw32",
     "dbms": "spark",
     "dataPartnerName": "NACHC",
     "outputDir": "C:/temp/ergasia/ExampleStudy",
