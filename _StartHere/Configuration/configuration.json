@@ -13,6 +13,12 @@
     "databaseFilter": [],
     "minCellCount": 5,
     "studiesToRun": [
-
+        ["./Studies/Test/howoften/howoften_andreas.json", "andreas"],
+        ["./Studies/Test/howoften/howoften_andreas.json", "azza"],
+        ["./Studies/Test/howoften/howoften_andreas.json", "evan"],
+        ["./Studies/Test/howoften/howoften_andreas.json", "george"],
+        ["./Studies/Test/howoften/howoften_andreas.json", "gowza"],
+        ["./Studies/Test/howoften/howoften_andreas.json", "joel"],
+        ["./Studies/Test/howoften/howoften_andreas.json", "overall"]
     ]
 }
