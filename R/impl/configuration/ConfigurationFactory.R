@@ -22,6 +22,7 @@ ConfigurationFactory = R6Class(
       # create the dvo
       rtn = Configuration$new()
       # populate the dvo
+      rtn$libPath = fileData$libPath
       rtn$dbms = fileData$dbms
       rtn$dataPartnerName = fileData$dataPartnerName
       rtn$outputDir = fileData$outputDir

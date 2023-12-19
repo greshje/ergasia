@@ -9,6 +9,7 @@ Configuration = R6Class(
   classname = "Configuration",
   
   public = list(
+    libPath = "",
     dbms = "",
     dataPartnerName = "",
     outputDir = "",
