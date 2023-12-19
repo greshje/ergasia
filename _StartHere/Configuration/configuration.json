@@ -1,0 +1,18 @@
+{
+    "dbms": "spark",
+    "dataPartnerName": "NACHC",
+    "outputDir": "C:/temp/ergasia/ExampleStudy",
+    "pathToDriver": "./etc/database/postgres/42.3.3", 
+    "cdmSchema": "demo_schema",
+    "workSchema": "demo_schema",
+    "tempSchema": "demo_schema",
+    "resultsSchemaPrefix": "example_study",
+    "cohortTableName": "demo_schema",
+    "studyNameList": ["example"],
+    "resultsFilter": [],
+    "databaseFilter": [],
+    "minCellCount": 5,
+    "studiesToRun": [
+
+    ]
+}
