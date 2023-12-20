@@ -6,9 +6,9 @@
 
 library(R6)
 
-ConnectionTester = R6Class(
+ConnectionDetailsTester = R6Class(
   
-  classname = "ConnectionTester",
+  classname = "ConnectionDetailsTester",
   
   public = list (
     
