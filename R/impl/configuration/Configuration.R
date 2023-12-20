@@ -9,6 +9,7 @@ Configuration = R6Class(
   classname = "Configuration",
   
   public = list(
+    keyRingName = "org.ohdsi.strategus.ergasia",
     libPath = "",
     dbms = "",
     dataPartnerName = "",
