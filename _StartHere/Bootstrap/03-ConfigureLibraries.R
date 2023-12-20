@@ -8,7 +8,7 @@ library(theon)
 
 # imports
 source("./R/impl/configuration/ConfigurationFactory.R")
-config <- ConfigurationFactory$new()$getConfiguration()
+config <- ConfigurationFactory$getConfiguration()
 libPath <- config$libPath
 theon <- theon::getTheon()
 

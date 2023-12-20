@@ -17,7 +17,7 @@ ExecutionSettings = R6Class(
   
   public = list (
     createExecutionSettings = function() {
-      config <- ConfigurationFactory$new()$getConfiguration()
+      config <- ConfigurationFactory$getConfiguration()
       rtn <- Strategus::createCdmExecutionSettings(
         connectionDetailsReference = config$dataPartnerName,
         workDatabaseSchema = config$workSchema,

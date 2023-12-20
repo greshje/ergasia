@@ -7,6 +7,7 @@
 
 library(R6)
 library(jsonlite)
+library(Strategus)
 
 source("./R/impl/configuration/Configuration.R")
 
@@ -16,11 +17,13 @@ ConfigurationFactory = R6Class(
   
   public = list(
     
-    getConfiguration = function() {
+    initConfiguration = function() {
       # read the data file
       fileData <- read_json("./_StartHere/Configuration/configuration.json")
       # create the dvo
       rtn = Configuration$new()
+      # add the options setting for the temp schema
+      options(sqlRenderTempEmulationSchema = fileData$tempSchema)
       # populate the dvo
       rtn$libPath = fileData$libPath
       rtn$dbms = fileData$dbms
@@ -44,3 +47,9 @@ ConfigurationFactory = R6Class(
   )
   
 )
+
+ConfigurationFactory$getConfiguration <- function() {
+  rtn <- ConfigurationFactory$new()$initConfiguration()
+  return(rtn)
+}
+
