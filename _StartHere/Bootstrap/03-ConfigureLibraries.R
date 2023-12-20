@@ -9,6 +9,8 @@ library(theon)
 # imports
 source("./R/impl/configuration/ConfigurationFactory.R")
 config <- ConfigurationFactory$new()$getConfiguration()
-lib <- config$libPath
+libPath <- config$libPath
 
-libUtil <- OhdsiLibUtil$new()
+addLib <- function(libName) {
+  
+}

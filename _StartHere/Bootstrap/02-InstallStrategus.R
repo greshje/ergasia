@@ -4,13 +4,22 @@
 #
 # ---
 
+# libraries
 library(theon)
 library(devtools)
 library(R6)
 
-libUtil <- OhdsiLibUtil$new()
-libUtil$forceRemovePackage("Strategus")
-devtools::unload("Strategus")
-remove.packages("Strategus")
-libUtil$installFromGithub("OHDSI/Strategus", "v0.1.0")
+# package to install
+remName <- "Strategus"
+pkgName <- "OHDSI/Strategus"
+pkgVersion <- "v0.1.0"
+
+# get the theon library utilities
+theon <- getTheon()
+# remove 
+theon$forceRemovePackage(remName)
+# install
+theon$installFromGithub(pkgName, pkgVersion)
+library(Strategus)
+
 

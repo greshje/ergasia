@@ -19,7 +19,7 @@ InstallTheon = R6Class(
     exec = function() {
       # current version of theon being used
       pkgName <- "NACHC-CAD/theon"
-      pkgVersion <- "v1.0.1"
+      pkgVersion <- "v1.0.3"
       # remove existing instance of theon
       remUtil <- RemoveTheon$new()
       remUtil$forceRemoveTheon()
