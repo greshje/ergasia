@@ -17,8 +17,7 @@ test_that(
     # make sure the test runs
     expect_true(1 == 1)
     # get the connection details
-    connectionDetails <- ConnectionDetailsFactory$new()$getCdmConnectionDetails()
-    cacheUtil <- ConnectionCacheUtil$new()
-    cacheUtil$storeCdmConnectionDetails(connectionDetails)
+    connectionDetails <- ConnectionDetailsFactory$getCdmConnectionDetails()
+    ConnectionCacheUtil$storeCdmConnectionDetails(connectionDetails)
   }
 )

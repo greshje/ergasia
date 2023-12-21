@@ -4,10 +4,9 @@
 #
 # ---
 
-source("./_StartHere/ConnectionDetails/CDM/ConnectionDetailsForCdm.R")
-source("./R/impl/connection/ConnectionTester.R")
+source("./R/impl/connection/ConnectionDetailsFactory.R")
+source("./R/impl/connection/ConnectionDetailsTester.R")
 
-connectionDetails <- ConnectionDetailsForCdm$get()
-tester <- ConnectionTester$new()
-tester$testConnection(connectionDetails)
+connectionDetails <- ConnectionDetailsFactory$getCdmConnectionDetails()
+ConnectionDetailsTester$testConnection(connectionDetails)
 

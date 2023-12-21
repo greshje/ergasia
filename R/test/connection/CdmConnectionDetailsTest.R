@@ -20,8 +20,8 @@ test_that (
   "Connection can be created for CDM",
   {
     expect_true(1 == 1)
-    connectionDetails <- ConnectionDetailsFactory$new()$getCdmConnectionDetails()
-    ConnectionDetailsTester$new()$testConnection(connectionDetails)
+    connectionDetails <- ConnectionDetailsFactory$getCdmConnectionDetails()
+    ConnectionDetailsTester$testConnection(connectionDetails)
   }
   
 )

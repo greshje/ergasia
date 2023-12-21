@@ -15,14 +15,14 @@ ConnectionDetailsFactory = R6Class(
   
   classname = "ConnectionDetailsFactory",
   
-  public = list (
-    
-    getCdmConnectionDetails = function() {
-      rtn <- (ConnectionDetailsForCdm$get())
-      ConnectionDetailsTester$new()$testConnection(rtn)      
-      return (rtn)
-    }
-    
-  )
+  public = list ()
   
 )
+
+ConnectionDetailsFactory$getCdmConnectionDetails <- function() {
+  rtn <- ConnectionDetailsForCdm$get()
+  ConnectionDetailsTester$testConnection(rtn)      
+  return (rtn)
+}
+
+

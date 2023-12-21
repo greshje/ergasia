@@ -84,39 +84,32 @@ ConnectionCacheUtil = R6Class(
     
     deleteKeyring = function (keyringName) {
       keyring::keyring_delete(keyringName)
-    },    
-
-    # ---
-    #
-    # A function to store connection details
-    #
-    # ---
-    
-    storeCdmConnectionDetails = function(connectionDetails) {
-      # get the config and key ring
-      browser()
-      config <- ConfigurationFactory$getConfiguration()
-      keyringName = config$keyRingName
-      # get the cacheUtil
-      cacheUtil <- ConnectionCacheUtil$new()
-      # set up the keyring
-      cacheUtil$checkEnv()
-      cacheUtil$createKeyring(keyringName)
-      # save the cdm connection details for strategus
-      Strategus::storeConnectionDetails(
-        connectionDetails = connectionDetails,
-        connectionDetailsReference = config$dataPartnerName,
-        keyringName = keyringName
-      )
     }
-    
+
   )
 
 )
 
+ConnectionCacheUtil$storeCdmConnectionDetails = function(connectionDetails) {
+  # get the config and key ring
+  config <- ConfigurationFactory$getConfiguration()
+  keyringName = config$keyringName
+  # get the cacheUtil
+  cacheUtil <- ConnectionCacheUtil$new()
+  # set up the keyring
+  cacheUtil$checkEnv()
+  cacheUtil$createKeyring(keyringName)
+  # save the cdm connection details for strategus
+  Strategus::storeConnectionDetails(
+    connectionDetails = connectionDetails,
+    connectionDetailsReference = config$dataPartnerName,
+    keyringName = keyringName
+  )
+}
+
 ConnectionCacheUtil$createAndStoreCdmConnectionDetails <- function () {
-  connectionDetails <- ConnectionDetailsFactory$new()$getCdmConnectionDetails()
-  ConnectionCacheUtil$new()$storeCdmConnectionDetails(connectionDetails)
+  connectionDetails <- ConnectionDetailsFactory$getCdmConnectionDetails()
+  ConnectionCacheUtil$storeCdmConnectionDetails(connectionDetails)
 }
 
 
