@@ -9,6 +9,4 @@
 
 source("./R/impl/lib/InstallTheon.R")
 InstallTheon$new()$exec()
-library(theon)
-
 

@@ -4,14 +4,11 @@
 #
 # ---
 
-# libraries
-library(testthat)
-
 # imporots
 source("./R/impl/strategus/StrategusClient.R")
 
-analysisFile <- "./_StartHere/Studies/Test/howoften/howoften_azza.json"
-analysisName <- "azza"
+analysisFile <- "./_StartHere/Studies/Test/nachc/StrategusSpecification.json"
+analysisName <- "covid_homeless"
 
 StrategusClient$runStudy(analysisFile, analysisName)
 
