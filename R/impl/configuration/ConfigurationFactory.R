@@ -24,6 +24,8 @@ ConfigurationFactory = R6Class(
       rtn = Configuration$new()
       # add the options setting for the temp schema
       options(sqlRenderTempEmulationSchema = fileData$tempSchema)
+      # hard coded value for the key for the keyring used by strategus
+      rtn$keyringName = "org.ohdsi.strategus.ergasia"
       # populate the dvo
       rtn$libPath = fileData$libPath
       rtn$dbms = fileData$dbms
