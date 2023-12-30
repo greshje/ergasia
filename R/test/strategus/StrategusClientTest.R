@@ -4,14 +4,22 @@
 #
 # ---
 
-# imporots
+# set the library path
+# source("./R/impl/lib/SetLibPaths.R")
+# SetLibPaths$exec()
+.libPaths()
+
+# imports
 source("./R/impl/strategus/StrategusClient.R")
 
-analysisFile <- "./_StartHere/Studies/Test/nachc/StrategusSpecification.json"
+analysisFile <- "./_StartHere/Studies/Test/nachc/covid_homeless.json"
 analysisName <- "covid_homeless"
 
 StrategusClient$runStudy(analysisFile, analysisName)
 
-    
+# check the libPaths
+.libPaths()
+
+
 
 

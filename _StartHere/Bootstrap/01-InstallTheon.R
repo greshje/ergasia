@@ -7,6 +7,12 @@
 #
 # ---
 
+# set the library path
+source("./R/impl/lib/SetLibPaths.R")
+SetLibPaths$exec()
+
 source("./R/impl/lib/InstallTheon.R")
-InstallTheon$new()$exec()
+InstallTheon$exec()
+
+.libPaths()
 

@@ -4,22 +4,31 @@
 #
 # ---
 
+# set the library path
+source("./R/impl/lib/SetLibPaths.R")
+SetLibPaths$exec()
+
 # libraries
 library(theon)
 library(devtools)
 library(R6)
+
+# get the theon library utilities
+libUtil <- getTheon()
+
+# get the current version of theon
+writeLines(paste0("Using theon version: ", libUtil$getPackageVersion("theon")))
 
 # package to install
 remName <- "Strategus"
 pkgName <- "OHDSI/Strategus"
 pkgVersion <- "v0.1.0"
 
-# get the theon library utilities
-theon <- getTheon()
 # remove 
-theon$forceRemovePackage(remName)
+libUtil$forceRemovePackage(remName)
+
 # install
-theon$installFromGithub(pkgName, pkgVersion)
-library(Strategus)
+libUtil$installFromGithub(pkgName, pkgVersion)
 
-
+# check the libPaths
+.libPaths()
