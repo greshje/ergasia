@@ -4,7 +4,7 @@
     "dataPartnerName": "NACHC",
     "outputDir": "C:/temp/ergasia/ExampleStudy",
     "pathToDriver": "./etc/database/postgres/42.3.3", 
-    "cdmSchema": "demo_cdm",
+    "cdmSchema": "covid_ohdsi",
     "workSchema": "demo_work",
     "tempSchema": "demo_temp",
     "resultsSchemaPrefix": "demo_",

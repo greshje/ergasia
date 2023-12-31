@@ -1,8 +1,11 @@
+
 # ---
 #
 # functions to load and install libraries/packages
 #
 # ---
+
+.libPaths()
 
 StrategusRunnerLibUtil <- {}
 
@@ -158,4 +161,6 @@ StrategusRunnerLibUtil$initLibs <- function() {
 # ---
 
 StrategusRunnerLibUtil$initLibs()
+
+.libPaths()
 
