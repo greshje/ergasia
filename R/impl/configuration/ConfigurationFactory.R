@@ -56,11 +56,12 @@ ConfigurationFactory$getConfiguration <- function() {
 }
 
 ConfigurationFactory$getStudiesToRun <- function() {
+  browser()
   config <- ConfigurationFactory$getConfiguration()
   studiesToRun <- config$studiesToRun
   rtn <- data.frame(Name = character(), File = character(), stringsAsFactors = FALSE)
   for(study in studiesToRun) {
-    rtn <- rbind(studiesToRun, data.frame(Name = study[[2]], File = study[[1]]))
+    rtn <- rbind(rtn, data.frame(Name = study[[2]], File = study[[1]]))
   }
   return(rtn)
 }

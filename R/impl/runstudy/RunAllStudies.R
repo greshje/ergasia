@@ -12,8 +12,8 @@ RunAllStudies$exec <- function() {
     print(studiesToRun)
 
     for(i in 1:nrow(studiesToRun)) {
-        studyName <- studiesToRun[i, "Name"]
-        studyFile <- studiesToRun[i, "File"]
+        studyName <- studiesToRun$Name[i]
+        studyFile <- studiesToRun$File[i]
         writeLines("")
         writeLines("")
         writeLines("")
@@ -27,7 +27,7 @@ RunAllStudies$exec <- function() {
         writeLines("")
         analysisFile <- studyFile
         analysisName <- studyName
-        StrategusClient$runStudy(analysisFile, analysisName)
+#        StrategusClient$runStudy(analysisFile, analysisName)
     }
 
 }
