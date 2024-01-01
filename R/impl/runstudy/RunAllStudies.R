@@ -27,7 +27,7 @@ RunAllStudies$exec <- function() {
         writeLines("")
         analysisFile <- studyFile
         analysisName <- studyName
-#        StrategusClient$runStudy(analysisFile, analysisName)
+        StrategusClient$runStudy(analysisFile, analysisName)
     }
 
 }
