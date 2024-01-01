@@ -7,4 +7,3 @@
 source("./R/impl/runstudy/RunAllStudies.R")
 RunAllStudies$exec()
 
-
