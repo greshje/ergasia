@@ -56,7 +56,6 @@ ConfigurationFactory$getConfiguration <- function() {
 }
 
 ConfigurationFactory$getStudiesToRun <- function() {
-  browser()
   config <- ConfigurationFactory$getConfiguration()
   studiesToRun <- config$studiesToRun
   rtn <- data.frame(Name = character(), File = character(), stringsAsFactors = FALSE)
