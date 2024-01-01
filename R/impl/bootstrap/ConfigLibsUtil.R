@@ -154,13 +154,5 @@ StrategusRunnerLibUtil$initLibs <- function() {
   
 }
 
-# ---
-#
-# initialize the libraries
-#
-# ---
-
-StrategusRunnerLibUtil$initLibs()
-
 .libPaths()
 
