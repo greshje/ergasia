@@ -4,9 +4,6 @@
 #
 # ---
 
-# set the library path
-# source("./R/impl/lib/SetLibPaths.R")
-# SetLibPaths$exec()
 .libPaths()
 
 # imports
