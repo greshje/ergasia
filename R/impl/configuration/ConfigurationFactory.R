@@ -31,6 +31,7 @@ ConfigurationFactory = R6Class(
       rtn$dbms = fileData$dbms
       rtn$dataPartnerName = fileData$dataPartnerName
       rtn$outputDir = fileData$outputDir
+      rtn$logDir = fileData$logDir
       rtn$pathToDriver = fileData$pathToDriver
       rtn$cdmSchema = fileData$cdmSchema
       rtn$workSchema = fileData$workSchema
@@ -65,4 +66,20 @@ ConfigurationFactory$getStudiesToRun <- function() {
   return(rtn)
 }
 
+ConfigurationFactory$getSuffixList <- function() {
+  rtn <- ConfigurationFactory$getStudiesToRun()
+  rtn <- as.list(rtn$Name)
+  return(rtn)
+}
 
+ConfigurationFactory$getResultsDir <- function() {
+  config <- ConfigurationFactory$getConfiguration()
+  dir <- paste(config$outputDir, config$dataPartnerName, sep = "/")
+  return (dir)
+}
+
+ConfigurationFactory$getModuleList <- function() {
+  dir <- ConfigurationFactory$getResultsDir()
+  rtn <- list.dirs(path = self$config$outputDir, recursive = FALSE)
+  return (rtn)
+}

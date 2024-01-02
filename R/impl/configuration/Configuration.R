@@ -14,6 +14,7 @@ Configuration = R6Class(
     dbms = "",
     dataPartnerName = "",
     outputDir = "",
+    logDir = "",
     pathToDriver = "",
     cdmSchema = "",
     workSchema = "",
