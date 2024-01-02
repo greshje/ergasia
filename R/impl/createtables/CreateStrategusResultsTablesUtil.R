@@ -195,7 +195,6 @@ CreateStrategusResultsTablesUtil = R6Class (
     # ---
     
     createResultsTables = function(dropExisting = FALSE) {
-      browser()
       # init 
       self$initLogging(self$resultsDatabaseSchemaCreationLogFolder)
       # get a database connection
