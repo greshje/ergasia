@@ -3,7 +3,7 @@
     "dbms": "spark",
     "dataPartnerName": "HOW_OFTEN_DEMO_CDM",
     "outputDir": "C:/temp/ergasia/HowOftenDemoCdmTestRun",
-    "logDir": "C:/temp/ergasia/HowOftenDemoCdmTestRun/log",
+    "logDir": "C:/temp/ergasia/log",
     "pathToDriver": "./etc/database/postgres/42.3.3", 
     "cdmSchema": "demo_cdm",
     "workSchema": "demo_work",

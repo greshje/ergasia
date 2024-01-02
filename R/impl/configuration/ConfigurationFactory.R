@@ -74,12 +74,15 @@ ConfigurationFactory$getSuffixList <- function() {
 
 ConfigurationFactory$getResultsDir <- function() {
   config <- ConfigurationFactory$getConfiguration()
-  dir <- paste(config$outputDir, config$dataPartnerName, sep = "/")
+  dir <- paste(config$outputDir, config$dataPartnerName, "strategusOutput", sep = "/")
   return (dir)
 }
 
 ConfigurationFactory$getModuleList <- function() {
+  config <- ConfigurationFactory$getConfiguration()
   dir <- ConfigurationFactory$getResultsDir()
-  rtn <- list.dirs(path = self$config$outputDir, recursive = FALSE)
+  rtn <- list.dirs(path = dir, recursive = FALSE)
+  writeLines("Output directories (rtn): ")
+  rtn
   return (rtn)
 }
