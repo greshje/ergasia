@@ -212,6 +212,4 @@ UploadResultsUtil$uploadResults <- function () {
   
 }
 
-UploadResultsUtil$uploadResults()
-
 
