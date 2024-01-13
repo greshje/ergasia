@@ -11,7 +11,7 @@ ConnectionDetailsForResults <- {}
 ConnectionDetailsForResults$createConnectionDetails <- function() {
   resultsDatabaseConnectionDetails <- DatabaseConnector::createConnectionDetails(
     dbms = "postgresql",
-    connectionString = "jdbc:postgresql://localhost:5432/OHDSI_HOMELESS_COVID_RESULTS_DB?user=postgres&password=ohdsi&currentSchema=OHDSI_HOMELESS_COVID_RESULTS_DB",
+    connectionString = "jdbc:postgresql://localhost:5432/STRAT_RESULTS?user=postgres&password=ohdsi&currentSchema=STRAT_RESULTS",
     pathToDriver = "D:/_YES/databases/postgres/drivers/42.3.3"
   )
   return(resultsDatabaseConnectionDetails)

@@ -102,7 +102,7 @@ ConnectionCacheUtil$storeCdmConnectionDetails = function(connectionDetails) {
   # save the cdm connection details for strategus
   Strategus::storeConnectionDetails(
     connectionDetails = connectionDetails,
-    connectionDetailsReference = config$dataPartnerName,
+    connectionDetailsReference = config$resultsDatabaseName,
     keyringName = keyringName
   )
 }

@@ -29,7 +29,7 @@ ConfigurationFactory = R6Class(
       # populate the dvo
       rtn$libPath = fileData$libPath
       rtn$dbms = fileData$dbms
-      rtn$dataPartnerName = fileData$dataPartnerName
+      rtn$resultsDatabaseName = fileData$resultsDatabaseName
       rtn$outputDir = fileData$outputDir
       rtn$logDir = fileData$logDir
       rtn$pathToDriver = fileData$pathToDriver
@@ -74,7 +74,7 @@ ConfigurationFactory$getSuffixList <- function() {
 
 ConfigurationFactory$getResultsDir <- function() {
   config <- ConfigurationFactory$getConfiguration()
-  dir <- paste(config$outputDir, config$dataPartnerName, "strategusOutput", sep = "/")
+  dir <- paste(config$outputDir, config$resultsDatabaseName, "strategusOutput", sep = "/")
   return (dir)
 }
 

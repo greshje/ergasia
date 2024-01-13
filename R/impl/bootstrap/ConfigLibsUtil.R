@@ -119,25 +119,26 @@ StrategusRunnerLibUtil$initLibs <- function() {
     StrategusRunnerLibUtil$installFromCran("dplyr", "1.1.4")
     StrategusRunnerLibUtil$installFromCran("R6", "2.5.1")
     StrategusRunnerLibUtil$installFromCran("DatabaseConnector", "6.2.4")
-    
+    StrategusRunnerLibUtil$installFromCran("knitr", "1.45")
+    # added for develop version of strategus
+    StrategusRunnerLibUtil$installFromCran("aws.s3", "0.3.21")
+    StrategusRunnerLibUtil$installFromCran("ellipsis", "0.3.2")
+    StrategusRunnerLibUtil$installFromCran("markdown", "1.12")
     
     # installs from github
     StrategusRunnerLibUtil$installFromGithub("OHDSI/Strategus", "v0.1.0")
+    StrategusRunnerLibUtil$installFromGithub("OHDSI/Characterization", "v0.1.3")
+    StrategusRunnerLibUtil$installFromGithub("OHDSI/CohortDiagnostics", "v3.2.3")
     StrategusRunnerLibUtil$installFromGithub("OHDSI/CohortGenerator", "v0.8.1")
-    StrategusRunnerLibUtil$installFromGithub("OHDSI/CohortMethod", "v5.1.0")
     StrategusRunnerLibUtil$installFromGithub("OHDSI/CohortIncidence", "v3.2.0")
+    StrategusRunnerLibUtil$installFromGithub("OHDSI/CohortMethod", "v5.1.0")
+    StrategusRunnerLibUtil$installFromGithub("OHDSI/PatientLevelPrediction", "v6.3.4")
+    StrategusRunnerLibUtil$installFromGithub("OHDSI/SelfControlledCaseSeries", "v4.2.0")
+    StrategusRunnerLibUtil$installFromGithub("OHDSI/EvidenceSynthesis", "v0.5.0")
     StrategusRunnerLibUtil$installFromGithub("OHDSI/CirceR", "v1.3.1")
-    
-    # from cran
-    library(remotes)
-    library(keyring)
-    library(usethis)
-    library(R6)
-    library(DatabaseConnector)
-    # from github
-    library(Strategus)
-    library(CohortGenerator)
-    library(CirceR)
+    StrategusRunnerLibUtil$installFromGithub("OHDSI/Eunomia", "v1.0.2")    
+    StrategusRunnerLibUtil$installFromGithub("OHDSI/OhdsiShinyModules", "v2.0.2")    
+    StrategusRunnerLibUtil$installFromGithub("OHDSI/ShinyAppBuilder", "v2.0.0")    
     
     # done
     StrategusRunnerLibUtil$setIsInit(TRUE) 
@@ -152,6 +153,33 @@ StrategusRunnerLibUtil$initLibs <- function() {
     print("LIBRARIES ALREADY INITIALIZED, SKIPPING INITIALIZATION.")
   }
   
+}
+
+StrategusRunnerLibUtil$loadLibs <- function() {
+  
+  # installs from cran
+  library("remotes")
+  library("keyring")
+  library("usethis")
+  library("dplyr")
+  library("R6")
+  library("DatabaseConnector")
+  library("knitr")
+  library("aws.s3")
+  library("ellipsis")
+  
+  # installs from github
+  library("Strategus")
+  library("Characterization")
+  library("CohortDiagnostics")
+  library("CohortGenerator")
+  library("CohortIncidence")
+  library("CohortMethod")
+  library("PatientLevelPrediction")
+  library("SelfControlledCaseSeries")
+  library("EvidenceSynthesis")
+  library("CirceR")
+
 }
 
 .libPaths()

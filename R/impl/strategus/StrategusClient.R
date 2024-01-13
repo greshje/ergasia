@@ -31,14 +31,13 @@ StrategusClient = R6Class (
 StrategusClient$copyResults <- function(analysisName) {
     config <- ConfigurationFactory$getConfiguration()
     resultsLocation <- paste(config$outputDir, "Results", sep = "/")
-    dataPartnerName <- config$dataPartnerName
-    resultsDir <- file.path(resultsLocation, analysisName, dataPartnerName)
-    browser()
+    resultsDatabaseName <- config$resultsDatabaseName
+    resultsDir <- file.path(resultsLocation, analysisName, resultsDatabaseName)
     if (dir.exists(resultsDir)) {
       unlink(resultsDir, recursive = TRUE)
     }
     dir.create(file.path(resultsDir), recursive = TRUE)
-    srcDir <- paste(config$outputDir, config$dataPartnerName, "strategusOutput", sep = "/")
+    srcDir <- paste(config$outputDir, config$resultsDatabaseName, "strategusOutput", sep = "/")
     dstDir <- resultsDir
     file.copy(srcDir, dstDir, recursive = TRUE)
 }
@@ -56,7 +55,7 @@ StrategusClient$runStudy <- function(analysisFile, analysisName) {
   Strategus::execute (
     analysisSpecifications = analysisSpecifications,
     executionSettings = executionSettings,
-    executionScriptFolder = file.path(config$outputDir, config$dataPartnerName, "strategusExecution"),
+    executionScriptFolder = file.path(config$outputDir, config$resultsDatabaseName, "strategusExecution"),
     keyringName = config$keyringName
   )
   # copy over the results

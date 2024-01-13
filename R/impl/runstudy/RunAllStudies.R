@@ -1,10 +1,18 @@
 # imports
 source("./R/impl/strategus/StrategusClient.R")
 
+#libraries
+library(Strategus)
+
+# ---
+#
+# RunAllStudies
+#
+# ---
+
 RunAllStudies <- {}
 
 RunAllStudies$exec <- function() {
-    .libPaths()
 
     config <- ConfigurationFactory$getConfiguration()
     studiesToRun <- ConfigurationFactory$getStudiesToRun()
@@ -31,6 +39,7 @@ RunAllStudies$exec <- function() {
     }
 
 }
+
 
 
 

@@ -5,5 +5,7 @@
 # ---
 
 source("./R/impl/runstudy/RunAllStudies.R")
+.libPaths()
+Strategus::getModuleList()
 RunAllStudies$exec()
 
