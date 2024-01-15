@@ -1,0 +1,21 @@
+{
+    "libPath": "",
+    "dbms": "spark",
+    "resultsDatabaseName": "STRAT_RESULTS",
+    "outputDir": "C:/_YES/_STRATEGUS/EUNOMIA",
+    "logDir": "C:/temp/ergasia/log",
+    "pathToDriver": "./etc/database/postgres/42.3.3", 
+    "cdmSchema": "covid_ohdsi",
+    "workSchema": "demo_work",
+    "tempSchema": "demo_temp",
+    "resultsSchemaPrefix": "demo_",
+    "cohortTableName": "demo_cohort",
+    "studyNameList": [],
+    "resultsFilter": [],
+    "databaseFilter": [],
+    "minCellCount": 5,
+    "studiesToRun": [
+        ["./_StartHere/Studies/Test/nachc/StrategusSpecification-CovidHomeless-MODIFIED.json", "nachc_homeless_vaccination_modified_ci"]
+    ]
+}
+

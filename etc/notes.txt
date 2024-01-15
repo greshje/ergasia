@@ -1,0 +1,30 @@
+# ---
+#
+# Installation
+#
+# ---
+
+- Install R 4.2.3
+- Use file.edit("~/.Renviron") to add the following line to the .Renviron file:
+  R_LIBS_USER="C:/Program Files/R/R-4.2.3/library"
+- Install RTools 4.2 
+  https://cran.r-project.org/bin/windows/Rtools/rtools42/rtools.html
+- Run the ./_StartHere/bootstrap/Bootstrap.R script to install the libraries needed by Strategus
+
+# ---
+#
+# These are the default settings when R 4.2.3 is installed.  
+#
+# ---
+
+.libPaths() for Strategus:
+> .libPaths()
+[1] "D:/_YES/_STRATEGUS/_MODULES/CohortGeneratorModule_0.1.0/renv/library/R-4.2/x86_64-w64-mingw32"
+[2] "C:/Program Files/R/R-4.2.3/library"   
+
+.libPaths() for R:
+> .libPaths()
+[1] "C:/ProgramData/R/lib"               "C:/Program Files/R/R-4.2.3/library"
+> 
+
+How to change .libPaths()

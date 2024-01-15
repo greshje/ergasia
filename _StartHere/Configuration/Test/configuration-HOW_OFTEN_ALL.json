@@ -1,0 +1,27 @@
+{
+    "libPath": "C:/_YES/_STRATEGUS/_MODULES/CohortIncidenceModule_0.2.0/renv/library/R-4.2/x86_64-w64-mingw32",
+    "dbms": "spark",
+    "resultsDatabaseName": "OHDSI_DEMO_CDM_RESULTS",
+    "outputDir": "C:/temp/ergasia/HowOftenDemoCdmTestRun",
+    "logDir": "C:/temp/ergasia/log",
+    "pathToDriver": "./etc/database/postgres/42.3.3", 
+    "cdmSchema": "demo_cdm",
+    "workSchema": "demo_work",
+    "tempSchema": "demo_temp",
+    "resultsSchemaPrefix": "demo_",
+    "cohortTableName": "demo_cohort",
+    "studyNameList": ["example"],
+    "resultsFilter": [],
+    "databaseFilter": [],
+    "minCellCount": 5,
+    "studiesToRun": [
+        ["./_StartHere/Studies/Test/howoften/howoften_andreas.json", "andreas"],
+        ["./_StartHere/Studies/Test/howoften/howoften_azza.json", "azza"],
+        ["./_StartHere/Studies/Test/howoften/howoften_evan.json", "evan"],
+        ["./_StartHere/Studies/Test/howoften/howoften_george.json", "george"],
+        ["./_StartHere/Studies/Test/howoften/howoften_gowza.json", "gowza"],
+        ["./_StartHere/Studies/Test/howoften/howoften_joel.json", "joel"],
+        ["./_StartHere/Studies/Test/howoften/howoften_overall.json", "overall"]
+    ]
+}
+

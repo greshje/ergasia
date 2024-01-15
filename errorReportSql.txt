@@ -1,0 +1,31 @@
+DBMS:
+postgresql
+
+Error:
+org.postgresql.util.PSQLException: ERROR: relation "demo_nachc_homeless_vaccination_modified.cg_cohort_definition" does not exist
+  Position: 43
+
+SQL:
+SELECT DISTINCT cohort_definition_id FROM demo_nachc_homeless_vaccination_modified.cg_cohort_definition;
+
+R version:
+R version 4.2.3 (2023-03-15 ucrt)
+
+Platform:
+x86_64-w64-mingw32
+
+Attached base packages:
+- stats
+- graphics
+- grDevices
+- utils
+- datasets
+- methods
+- base
+
+Other attached packages:
+- jsonlite (1.8.8)
+- Strategus (0.1.0)
+- CohortGenerator (0.8.1)
+- DatabaseConnector (6.2.4)
+- R6 (2.5.1)
