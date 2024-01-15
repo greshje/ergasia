@@ -99,6 +99,7 @@ StrategusRunnerLibUtil$removePackagesInstalledHere <- function() {
   StrategusRunnerLibUtil$forceRemovePackage("Strategus")
   StrategusRunnerLibUtil$forceRemovePackage("CohortGenerator")
   StrategusRunnerLibUtil$forceRemovePackage("CirceR")
+  StrategusRunnerLibUtil$forceRemovePackage("CohortIncidence")
   # done
   StrategusRunnerLibUtil$setIsInit(FALSE)
 }
