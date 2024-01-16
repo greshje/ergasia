@@ -1,19 +1,10 @@
 # ---
 #
-# A class with methods to test connection details
+# A method to test connection details
 #
 # ---
 
-library(R6)
-
-ConnectionDetailsTester = R6Class(
-  
-  classname = "ConnectionDetailsTester",
-  
-  public = list (
-  )
-  
-)
+ConnectionDetailsTester = {}
 
 ConnectionDetailsTester$testConnection = function(connectionDetails) {
   conn <- DatabaseConnector::connect(connectionDetails)
