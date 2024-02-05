@@ -15,13 +15,7 @@
     "databaseFilter": [],
     "minCellCount": 5,
     "studiesToRun": [
-        ["./_StartHere/Studies/Test/howoften/howoften_andreas.json", "andreas"],
-        ["./_StartHere/Studies/Test/howoften/howoften_azza.json", "azza"],
-        ["./_StartHere/Studies/Test/howoften/howoften_evan.json", "evan"],
-        ["./_StartHere/Studies/Test/howoften/howoften_george.json", "george"],
-        ["./_StartHere/Studies/Test/howoften/howoften_gowza.json", "gowza"],
-        ["./_StartHere/Studies/Test/howoften/howoften_joel.json", "joel"],
-        ["./_StartHere/Studies/Test/howoften/howoften_overall.json", "overall"]
+        ["./_StartHere/Studies/Test/howoften/howoften_azza.json", "azza"]
     ]
 }
 
