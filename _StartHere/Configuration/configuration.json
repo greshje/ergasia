@@ -2,7 +2,7 @@
     "libPath": "",
     "dbms": "spark",
     "resultsDatabaseName": "EUNOMIA_RESULTS",
-    "outputDir": "C:/temp/ergasia/STRAT_V0_2_1_EUNOMIA",
+    "outputDir": "C:/temp/ergasia/STRAT_V0_2_1_NACHC_HOMELESS",
     "logDir": "C:/temp/ergasia/log",
     "pathToDriver": "./etc/database/postgres/42.3.3", 
     "cdmSchema": "demo_cdm",
@@ -15,7 +15,7 @@
     "databaseFilter": [],
     "minCellCount": 5,
     "studiesToRun": [
-        ["./_StartHere/Studies/Test/howoften/howoften_azza.json", "azza"]
+        ["./_StartHere/Studies/Test/nachc/nachc-homeless-covid-spec.json", "nachc_homeless"]
     ]
 }
 
