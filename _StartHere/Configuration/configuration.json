@@ -2,7 +2,7 @@
     "libPath": "",
     "dbms": "spark",
     "resultsDatabaseName": "EUNOMIA_RESULTS",
-    "outputDir": "C:/temp/ergasia/EUNOMIA",
+    "outputDir": "C:/temp/ergasia/STRAT_V0_2_1_EUNOMIA",
     "logDir": "C:/temp/ergasia/log",
     "pathToDriver": "./etc/database/postgres/42.3.3", 
     "cdmSchema": "demo_cdm",
