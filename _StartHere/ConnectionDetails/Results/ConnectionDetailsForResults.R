@@ -6,14 +6,25 @@
 #
 # ---
 
+# imports
+source("./R/impl/configuration/ConfigurationFactory.R")
+
 ConnectionDetailsForResults <- {}
 
 ConnectionDetailsForResults$createConnectionDetails <- function() {
-  resultsDatabaseConnectionDetails <- DatabaseConnector::createConnectionDetails(
-    dbms = "postgresql",
-    connectionString = "jdbc:postgresql://localhost:5432/ERG_DEMO?user=postgres&password=ohdsi&currentSchema=ERG_DEMO",
-    pathToDriver = "D:/_YES/databases/postgres/drivers/42.3.3"
+
+  config <- ConfigurationFactory$getConfiguration()
+  currentSchema <- config$cdmSchema
+  
+  pathToDriver <- config$pathToDriver
+  dbms <- "postgresql"
+  connectionString <- "jdbc:postgresql://localhost:5432/postgres?user=postgres&password=mypass"
+
+  resultsDatabaseConnectionDetails <- DatabaseConnector::createConnectionDetails (
+    pathToDriver = pathToDriver,
+    dbms = dbms,
+    connectionString = connectionString
   )
   return(resultsDatabaseConnectionDetails)
-}
 
+}

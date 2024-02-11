@@ -82,7 +82,27 @@ StrategusRunnerLibUtil$forceRemovePackage <- function(pkgName) {
   }, error = function(e) {
     writeLines(paste0("COULD NOT REMOVE PACKAGE: ", pkgName))
   })
+  writeLines("Removing directory...")
+  StrategusRunnerLibUtil$forceRemovePackageByDir(pkgName)
 }
+
+StrategusRunnerLibUtil$forceRemovePackageByDir <- function(pkgName) {
+  # Get the library path where the package is installed
+  lib_path <- .libPaths()
+  # Remove the package forcibly by deleting its directory using rm -rf
+  lib_path <- paste(lib_path, pkgName, sep = "/")
+  writeLines(paste("Removing dir:", lib_path, sep = " "))
+  cmd <- paste("rm -rf", file.path(lib_path, sep = " "))
+  system(cmd)
+  writeLines("Done with rm")
+  # Remove the package forcibly by deleting its directory using rm -rf
+  writeLines ("Removing using rd")
+  cmd <- paste("rd /s /q", shQuote(file.path(lib_path)))
+  writeLines(paste("Executing: ", cmd))
+  system(cmd)  
+  cat("Package", pkgName, "removed successfully.\n")
+}
+
 
 # ---
 #
@@ -140,6 +160,7 @@ StrategusRunnerLibUtil$initLibs <- function() {
     StrategusRunnerLibUtil$installFromGithub("OHDSI/Eunomia", "v1.0.2")    
     StrategusRunnerLibUtil$installFromGithub("OHDSI/OhdsiShinyModules", "v2.0.2")    
     StrategusRunnerLibUtil$installFromGithub("OHDSI/ShinyAppBuilder", "v2.0.0")    
+    StrategusRunnerLibUtil$installFromGithub("OHDSI/SqlRender", "v1.16.1")    
     
     # done
     StrategusRunnerLibUtil$setIsInit(TRUE) 

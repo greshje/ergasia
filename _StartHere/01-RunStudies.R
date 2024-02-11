@@ -9,3 +9,4 @@ source("./R/impl/runstudy/RunAllStudies.R")
 Strategus::getModuleList()
 RunAllStudies$exec()
 
+Strategus::getModuleList()
