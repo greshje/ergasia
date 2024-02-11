@@ -22,3 +22,4 @@ RunAllStudies$exec()
 
 # check what module versions strategus is using (again, so that we can see them after everything is done)
 Strategus::getModuleList()
+
