@@ -5,12 +5,13 @@ source("./R/impl/database/ErgDbUtil.R")
 
 # function used to echo what table is being dropped/recreated
 echoStatus <- function(tableName) {
-  msg <- "\n\n\n"
+  msg <- ""
   msg <- paste0(msg, "\n# ---")
   msg <- paste0(msg, "\n#")
   msg <- paste0(msg, "\n# RECREATING TABLE: ", tableName)
   msg <- paste0(msg, "\n#")
   msg <- paste0(msg, "\n# ---")
+  msg <- paste0(msg, "\n")
   writeLines(msg)
 }
 
@@ -18,7 +19,8 @@ echoStatus <- function(tableName) {
 dropAndRecreateTable <- function (tableName) {
   echoStatus(tableName)
   ErgDbUtil$exec(paste0("drop schema if exists ", tableName, " cascade"), dbms, conn)
-  ErgDbUtil$exec(paste0("create schema ", config$workSchema), dbms, conn)
+  ErgDbUtil$exec(paste0("create schema ", tableName), dbms, conn)
+  writeLines(paste0("Done recreating table: ", tableName, ""))
 }
 
 # get the configuration and dbms for the cdm
@@ -35,5 +37,12 @@ print(success)
 
 # reset the working tables
 dropAndRecreateTable(config$workSchema)
+dropAndRecreateTable(config$tempSchema)
+
+# done
+writeLines("\n\n\n")
+writeLines("Done.")
+
+
 
 

@@ -2,10 +2,10 @@ DBMS:
 postgresql
 
 Error:
-org.postgresql.util.PSQLException: ERROR: database "demo_work" already exists
+org.postgresql.util.PSQLException: ERROR: schema "demo_work" already exists
 
 SQL:
-create database demo_work
+create schema demo_work
 
 R version:
 R version 4.2.3 (2023-03-15 ucrt)
