@@ -13,3 +13,10 @@ ErgDbUtil$query <- function(sqlString, dbms, conn) {
   return(rtn)
 }
 
+ErgDbUtil$exec <- function(sqlString, dbms, conn) {
+  sqlString <- SqlRender::translate(sqlString, dbms)
+  rtn <- DatabaseConnector::executeSql(conn, sqlString)
+  return(rtn)
+}
+
+
