@@ -6,6 +6,10 @@
 
 # import the actual code that runs the studies
 source("./R/impl/runstudy/RunAllStudies.R")
+source("./R/impl/reset/Reset.R")
+
+# reset the output (results dir and temp/work schemas are dropped and recreated)
+ResetErgasia$exec()
 
 # check what the current library path is 
 .libPaths()

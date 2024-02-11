@@ -1,5 +1,12 @@
 # imports
 source("./R/impl/reset/DeleteOutputFolder.R")
+source("./R/impl/reset/ResetResultsDatabaseTables.R")
 
-DeleteOutputFolder$exec()
+ResetErgasia <- {}
+
+ResetErgasia$exec <- function() {
+  DeleteOutputFolder$exec()
+  ResetResultsDatabaseTables$exec()
+}
+
 
