@@ -15,7 +15,7 @@
     "databaseFilter": [],
     "minCellCount": 5,
     "studiesToRun": [
-        ["./_StartHere/Studies/Test/howoften/howoften_azza.json", "azza"]
+        ["./_StartHere/Studies/Test/nachc/StrategusSpecification-CovidHomeless-2024-02-11.json", "covid_homeless"]
     ]
 }
 
