@@ -4,11 +4,16 @@
 #
 # ---
 
+# imports
+source("./R/impl/database/ErgDbUtil.R")
+
 ConnectionDetailsTester = {}
 
-ConnectionDetailsTester$testConnection = function(connectionDetails) {
+ConnectionDetailsTester$testConnection = function(connectionDetails, dbms) {
+  print(paste0("DBMS is: ", dbms))
   conn <- DatabaseConnector::connect(connectionDetails)
-  success <- DatabaseConnector::querySql(conn, "select 1 as one")
+  sqlString <- "select 1 as one"
+  success <- ErgDbUtil$query(sqlString, dbms, conn)
   print(success)
   DatabaseConnector::disconnect(conn)
   if (success != 1) {

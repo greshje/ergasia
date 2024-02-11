@@ -9,6 +9,6 @@ source("./_StartHere/ConnectionDetails/Results/ConnectionDetailsForResults.R")
 source("./R/impl/connection/ConnectionDetailsTester.R")
 
 connectionDetails <- ConnectionDetailsForResults$createConnectionDetails()
-ConnectionDetailsTester$testConnection(connectionDetails)
+ConnectionDetailsTester$testConnection(connectionDetails, "postgresql")
 
 

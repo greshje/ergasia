@@ -189,6 +189,7 @@ StrategusRunnerLibUtil$loadLibs <- function() {
   library("knitr")
   library("aws.s3")
   library("ellipsis")
+  library("markdown")
   
   # installs from github
   library("Strategus")
@@ -201,6 +202,10 @@ StrategusRunnerLibUtil$loadLibs <- function() {
   library("SelfControlledCaseSeries")
   library("EvidenceSynthesis")
   library("CirceR")
+  library("Eunomia")
+  library("OhdsiShinyModules")
+  library(ShinyAppBuilder)
+  library("SqlRender")
 
 }
 

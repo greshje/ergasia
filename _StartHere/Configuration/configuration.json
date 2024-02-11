@@ -1,6 +1,6 @@
 {
     "libPath": "",
-    "dbms": "spark",
+    "dbms": "postgresql",
     "resultsDatabaseName": "EUNOMIA_RESULTS",
     "outputDir": "C:/temp/ergasia/EUNOMIA",
     "logDir": "C:/temp/ergasia/log",

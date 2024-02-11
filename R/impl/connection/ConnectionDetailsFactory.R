@@ -8,6 +8,7 @@
 library(R6)
 
 # includes
+source("./R/impl/configuration/ConfigurationFactory.R")
 source("./_StartHere/ConnectionDetails/CDM/ConnectionDetailsForCdm.R")
 source("./R/impl/connection/ConnectionDetailsTester.R")
 
@@ -20,8 +21,10 @@ ConnectionDetailsFactory = R6Class(
 )
 
 ConnectionDetailsFactory$getCdmConnectionDetails <- function() {
+  config <- ConfigurationFactory$getConfiguration()
+  dbms <- config$dbms
   rtn <- ConnectionDetailsForCdm$get()
-  ConnectionDetailsTester$testConnection(rtn)      
+  ConnectionDetailsTester$testConnection(rtn, dbms)      
   return (rtn)
 }
 
