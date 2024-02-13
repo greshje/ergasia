@@ -82,7 +82,27 @@ StrategusRunnerLibUtil$forceRemovePackage <- function(pkgName) {
   }, error = function(e) {
     writeLines(paste0("COULD NOT REMOVE PACKAGE: ", pkgName))
   })
+  writeLines("Removing directory...")
+  StrategusRunnerLibUtil$forceRemovePackageByDir(pkgName)
 }
+
+StrategusRunnerLibUtil$forceRemovePackageByDir <- function(pkgName) {
+  # Get the library path where the package is installed
+  lib_path <- .libPaths()
+  # Remove the package forcibly by deleting its directory using rm -rf
+  lib_path <- paste(lib_path, pkgName, sep = "/")
+  writeLines(paste("Removing dir:", lib_path, sep = " "))
+  cmd <- paste("rm -rf", file.path(lib_path, sep = " "))
+  system(cmd)
+  writeLines("Done with rm")
+  # Remove the package forcibly by deleting its directory using rm -rf
+  writeLines ("Removing using rd")
+  cmd <- paste("rd /s /q", shQuote(file.path(lib_path)))
+  writeLines(paste("Executing: ", cmd))
+  system(cmd)  
+  cat("Package", pkgName, "removed successfully.\n")
+}
+
 
 # ---
 #
@@ -127,19 +147,20 @@ StrategusRunnerLibUtil$initLibs <- function() {
     StrategusRunnerLibUtil$installFromCran("markdown", "1.12")
     
     # installs from github
-    StrategusRunnerLibUtil$installFromGithub("OHDSI/Strategus", "v0.1.0")
+    StrategusRunnerLibUtil$installFromGithub("OHDSI/Strategus", "v0.2.1")
     StrategusRunnerLibUtil$installFromGithub("OHDSI/Characterization", "v0.1.3")
-    StrategusRunnerLibUtil$installFromGithub("OHDSI/CohortDiagnostics", "v3.2.3")
+    StrategusRunnerLibUtil$installFromGithub("OHDSI/CohortDiagnostics", "v3.2.5")
     StrategusRunnerLibUtil$installFromGithub("OHDSI/CohortGenerator", "v0.8.1")
-    StrategusRunnerLibUtil$installFromGithub("OHDSI/CohortIncidence", "v3.2.0")
-    StrategusRunnerLibUtil$installFromGithub("OHDSI/CohortMethod", "v5.1.0")
-    StrategusRunnerLibUtil$installFromGithub("OHDSI/PatientLevelPrediction", "v6.3.4")
-    StrategusRunnerLibUtil$installFromGithub("OHDSI/SelfControlledCaseSeries", "v4.2.0")
+    StrategusRunnerLibUtil$installFromGithub("OHDSI/CohortIncidence", "v3.3.0")
+    StrategusRunnerLibUtil$installFromGithub("OHDSI/CohortMethod", "v5.2.0")
+    StrategusRunnerLibUtil$installFromGithub("OHDSI/PatientLevelPrediction", "v6.3.6")
+    StrategusRunnerLibUtil$installFromGithub("OHDSI/SelfControlledCaseSeries", "v5.1.1")
     StrategusRunnerLibUtil$installFromGithub("OHDSI/EvidenceSynthesis", "v0.5.0")
     StrategusRunnerLibUtil$installFromGithub("OHDSI/CirceR", "v1.3.1")
     StrategusRunnerLibUtil$installFromGithub("OHDSI/Eunomia", "v1.0.2")    
     StrategusRunnerLibUtil$installFromGithub("OHDSI/OhdsiShinyModules", "v2.0.2")    
     StrategusRunnerLibUtil$installFromGithub("OHDSI/ShinyAppBuilder", "v2.0.0")    
+    StrategusRunnerLibUtil$installFromGithub("OHDSI/SqlRender", "v1.16.1")    
     
     # done
     StrategusRunnerLibUtil$setIsInit(TRUE) 
@@ -168,6 +189,7 @@ StrategusRunnerLibUtil$loadLibs <- function() {
   library("knitr")
   library("aws.s3")
   library("ellipsis")
+  library("markdown")
   
   # installs from github
   library("Strategus")
@@ -180,6 +202,10 @@ StrategusRunnerLibUtil$loadLibs <- function() {
   library("SelfControlledCaseSeries")
   library("EvidenceSynthesis")
   library("CirceR")
+  library("Eunomia")
+  library("OhdsiShinyModules")
+  library(ShinyAppBuilder)
+  library("SqlRender")
 
 }
 

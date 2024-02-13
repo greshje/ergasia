@@ -2,11 +2,10 @@ DBMS:
 postgresql
 
 Error:
-org.postgresql.util.PSQLException: ERROR: relation "demo_nachc_homeless_vaccination_modified.cg_cohort_definition" does not exist
-  Position: 43
+org.postgresql.util.PSQLException: ERROR: schema "demo_work" already exists
 
 SQL:
-SELECT DISTINCT cohort_definition_id FROM demo_nachc_homeless_vaccination_modified.cg_cohort_definition;
+create schema demo_work
 
 R version:
 R version 4.2.3 (2023-03-15 ucrt)
@@ -24,8 +23,9 @@ Attached base packages:
 - base
 
 Other attached packages:
-- jsonlite (1.8.8)
-- Strategus (0.1.0)
+- SqlRender (1.16.1)
+- Strategus (0.2.1)
 - CohortGenerator (0.8.1)
 - DatabaseConnector (6.2.4)
+- jsonlite (1.8.8)
 - R6 (2.5.1)
