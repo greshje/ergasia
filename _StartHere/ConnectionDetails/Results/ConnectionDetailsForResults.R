@@ -18,7 +18,7 @@ ConnectionDetailsForResults$createConnectionDetails <- function() {
   
   pathToDriver <- config$pathToDriver
   dbms <- "postgresql"
-  connectionString <- "jdbc:postgresql://localhost:5432/postgres?user=postgres&password=mypass"
+  connectionString <- "jdbc:postgresql://localhost:5432/OHDSI_NACHC_COVID_HOMELESS_2023_02_13?user=postgres&password=ohdsi"
 
   resultsDatabaseConnectionDetails <- DatabaseConnector::createConnectionDetails (
     pathToDriver = pathToDriver,

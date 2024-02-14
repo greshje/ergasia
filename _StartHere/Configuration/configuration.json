@@ -1,11 +1,11 @@
 {
     "libPath": "",
-    "dbms": "postgresql",
-    "resultsDatabaseName": "EUNOMIA_RESULTS",
-    "outputDir": "C:/temp/ergasia/EUNOMIA",
+    "dbms": "spark",
+    "resultsDatabaseName": "NACHC_RESULTS",
+    "outputDir": "C:/temp/ergasia/NACHC",
     "logDir": "C:/temp/ergasia/log",
     "pathToDriver": "./etc/database/postgres/42.3.3", 
-    "cdmSchema": "demo_cdm",
+    "cdmSchema": "covid_ohdsi",
     "workSchema": "demo_work",
     "tempSchema": "demo_temp",
     "resultsSchemaPrefix": "demo_",
@@ -15,7 +15,7 @@
     "databaseFilter": [],
     "minCellCount": 5,
     "studiesToRun": [
-        ["./_StartHere/Studies/Test/nachc/StrategusSpecification-CovidHomeless-2024-02-11.json", "covid_homeless"]
+        ["./_StartHere/Studies/StrategusSpecification-CovidHomeless-MODIFIED.json", "covid_homeless_modified"]
     ]
 }
 
